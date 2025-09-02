@@ -1,10 +1,10 @@
 ﻿Public Class Form1
     Private Sub Equals_Click(sender As Object, e As EventArgs) Handles Equals.Click
-        Label1.Text = "HELLO WORLD!"
+        Display.Text = "HELLO WORLD!"
     End Sub
 
     Private Sub Clear_Click(sender As Object, e As EventArgs) Handles Clear.Click
-        Label1.Text = ""
+        Display.Text = ""
     End Sub
 
     Private Sub Number_Click(sender As Object, e As EventArgs) _
@@ -15,12 +15,18 @@ Handles B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click,
 
         Dim btn As Button = CType(sender, Button)
 
-        If Label1.Text = "0" Then
-            Label1.Text = btn.Text
+        If Display.Text = "0" Then
+            Display.Text = btn.Text
         Else
-            Label1.Text &= btn.Text
+            Display.Text &= btn.Text
         End If
     End Sub
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub Del_Click(sender As Object, e As EventArgs) Handles Del.Click
+
+    End Sub
 End Class
