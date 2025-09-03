@@ -49,4 +49,20 @@ Handles B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click,
     Private Sub Del_Click(sender As Object, e As EventArgs) Handles Del.Click
 
     End Sub
+
+    Private Sub Display_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Display.KeyPress
+        Dim allowedChars As String = "0123456789.+-x/"
+        If Not allowedChars.Contains(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+
+        If "+-x/".Contains(e.KeyChar) Then
+            If Double.TryParse(Display.Text, firstNum) Then
+                currentNumber = e.KeyChar.ToString()
+                isOperatorPressed = True
+            End If
+            e.Handled = True
+            Display.Text = ""
+        End If
+    End Sub
 End Class
