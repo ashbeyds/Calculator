@@ -37,6 +37,12 @@ Handles B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click,
         B6.Click, B7.Click, B8.Click, B9.Click, Point.Click, Plus.Click,
         Minus.Click, Multiply.Click, Divide.Click
 
+        ' Limit input to 14 number
+        If Display.Text.Length >= 14 AndAlso Not isOperatorPressed Then
+            MessageBox.Show("Maximum input length reached (Up to 14 number only).", "Input Limit", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
         Dim btn As Button = CType(sender, Button)
         Dim operators As String() = {"+", "-", "x", "/"}
 
@@ -85,6 +91,10 @@ Handles B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click,
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+    Private Sub Display_Click(sender As Object, e As EventArgs) Handles Display.Click
 
     End Sub
 End Class
