@@ -313,7 +313,7 @@ Partial Class Form1
         Me.Display.Location = New System.Drawing.Point(-224, 23)
         Me.Display.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Display.Name = "Display"
-        Me.Display.Size = New System.Drawing.Size(554, 104)
+        Me.Display.Size = New System.Drawing.Size(552, 104)
         Me.Display.TabIndex = 41
         Me.Display.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -367,7 +367,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Calculator.My.Resources.Resources.Screenshot_2025_09_02_234521
-        Me.ClientSize = New System.Drawing.Size(339, 571)
+        Me.ClientSize = New System.Drawing.Size(338, 571)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Clear)
         Me.Controls.Add(Me.Del)
