@@ -391,6 +391,7 @@ Partial Class Form1
         Me.Controls.Add(Me.B1)
         Me.Controls.Add(Me.Button2)
         Me.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Form1"
