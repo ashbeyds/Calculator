@@ -65,4 +65,12 @@ Handles B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click,
             Display.Text = ""
         End If
     End Sub
+
+    Private Sub Display_Click(sender As Object, e As EventArgs) Handles Display.Click
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
