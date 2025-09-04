@@ -56,7 +56,7 @@ Partial Class Form1
         Me.Clear.Font = New System.Drawing.Font("Segoe UI Semibold", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clear.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Clear.Location = New System.Drawing.Point(8, 138)
-        Me.Clear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Clear.Margin = New System.Windows.Forms.Padding(2)
         Me.Clear.Name = "Clear"
         Me.Clear.Size = New System.Drawing.Size(156, 81)
         Me.Clear.TabIndex = 58
@@ -71,7 +71,7 @@ Partial Class Form1
         Me.Del.Font = New System.Drawing.Font("Segoe UI Semibold", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Del.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Del.Location = New System.Drawing.Point(170, 138)
-        Me.Del.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Del.Margin = New System.Windows.Forms.Padding(2)
         Me.Del.Name = "Del"
         Me.Del.Size = New System.Drawing.Size(75, 81)
         Me.Del.TabIndex = 57
@@ -87,7 +87,7 @@ Partial Class Form1
         Me.Divide.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Divide.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Divide.Location = New System.Drawing.Point(253, 138)
-        Me.Divide.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Divide.Margin = New System.Windows.Forms.Padding(2)
         Me.Divide.Name = "Divide"
         Me.Divide.Size = New System.Drawing.Size(75, 81)
         Me.Divide.TabIndex = 56
@@ -102,7 +102,7 @@ Partial Class Form1
         Me.Multiply.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Multiply.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Multiply.Location = New System.Drawing.Point(253, 225)
-        Me.Multiply.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Multiply.Margin = New System.Windows.Forms.Padding(2)
         Me.Multiply.Name = "Multiply"
         Me.Multiply.Size = New System.Drawing.Size(75, 80)
         Me.Multiply.TabIndex = 55
@@ -117,7 +117,7 @@ Partial Class Form1
         Me.Minus.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Minus.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Minus.Location = New System.Drawing.Point(253, 310)
-        Me.Minus.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Minus.Margin = New System.Windows.Forms.Padding(2)
         Me.Minus.Name = "Minus"
         Me.Minus.Size = New System.Drawing.Size(75, 81)
         Me.Minus.TabIndex = 54
@@ -132,7 +132,7 @@ Partial Class Form1
         Me.Plus.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Plus.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Plus.Location = New System.Drawing.Point(253, 396)
-        Me.Plus.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Plus.Margin = New System.Windows.Forms.Padding(2)
         Me.Plus.Name = "Plus"
         Me.Plus.Size = New System.Drawing.Size(75, 81)
         Me.Plus.TabIndex = 53
@@ -147,7 +147,7 @@ Partial Class Form1
         Me.Equals.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Equals.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Equals.Location = New System.Drawing.Point(170, 484)
-        Me.Equals.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Equals.Margin = New System.Windows.Forms.Padding(2)
         Me.Equals.Name = "Equals"
         Me.Equals.Size = New System.Drawing.Size(158, 81)
         Me.Equals.TabIndex = 52
@@ -162,7 +162,7 @@ Partial Class Form1
         Me.Point.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Point.ForeColor = System.Drawing.SystemColors.Window
         Me.Point.Location = New System.Drawing.Point(89, 484)
-        Me.Point.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Point.Margin = New System.Windows.Forms.Padding(2)
         Me.Point.Name = "Point"
         Me.Point.Size = New System.Drawing.Size(75, 81)
         Me.Point.TabIndex = 51
@@ -177,7 +177,7 @@ Partial Class Form1
         Me.B0.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.B0.ForeColor = System.Drawing.SystemColors.Window
         Me.B0.Location = New System.Drawing.Point(8, 484)
-        Me.B0.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.B0.Margin = New System.Windows.Forms.Padding(2)
         Me.B0.Name = "B0"
         Me.B0.Size = New System.Drawing.Size(75, 81)
         Me.B0.TabIndex = 50
@@ -192,7 +192,7 @@ Partial Class Form1
         Me.B9.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.B9.ForeColor = System.Drawing.SystemColors.Window
         Me.B9.Location = New System.Drawing.Point(170, 224)
-        Me.B9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.B9.Margin = New System.Windows.Forms.Padding(2)
         Me.B9.Name = "B9"
         Me.B9.Size = New System.Drawing.Size(75, 81)
         Me.B9.TabIndex = 49
@@ -207,7 +207,7 @@ Partial Class Form1
         Me.B8.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.B8.ForeColor = System.Drawing.SystemColors.Window
         Me.B8.Location = New System.Drawing.Point(89, 224)
-        Me.B8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.B8.Margin = New System.Windows.Forms.Padding(2)
         Me.B8.Name = "B8"
         Me.B8.Size = New System.Drawing.Size(75, 81)
         Me.B8.TabIndex = 48
@@ -222,7 +222,7 @@ Partial Class Form1
         Me.B7.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.B7.ForeColor = System.Drawing.SystemColors.Window
         Me.B7.Location = New System.Drawing.Point(8, 224)
-        Me.B7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.B7.Margin = New System.Windows.Forms.Padding(2)
         Me.B7.Name = "B7"
         Me.B7.Size = New System.Drawing.Size(75, 81)
         Me.B7.TabIndex = 47
@@ -237,7 +237,7 @@ Partial Class Form1
         Me.B6.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.B6.ForeColor = System.Drawing.SystemColors.Window
         Me.B6.Location = New System.Drawing.Point(170, 310)
-        Me.B6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.B6.Margin = New System.Windows.Forms.Padding(2)
         Me.B6.Name = "B6"
         Me.B6.Size = New System.Drawing.Size(75, 81)
         Me.B6.TabIndex = 46
@@ -252,7 +252,7 @@ Partial Class Form1
         Me.B5.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.B5.ForeColor = System.Drawing.SystemColors.Window
         Me.B5.Location = New System.Drawing.Point(89, 310)
-        Me.B5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.B5.Margin = New System.Windows.Forms.Padding(2)
         Me.B5.Name = "B5"
         Me.B5.Size = New System.Drawing.Size(75, 81)
         Me.B5.TabIndex = 45
@@ -267,7 +267,7 @@ Partial Class Form1
         Me.B4.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.B4.ForeColor = System.Drawing.SystemColors.Window
         Me.B4.Location = New System.Drawing.Point(8, 310)
-        Me.B4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.B4.Margin = New System.Windows.Forms.Padding(2)
         Me.B4.Name = "B4"
         Me.B4.Size = New System.Drawing.Size(75, 81)
         Me.B4.TabIndex = 44
@@ -282,7 +282,7 @@ Partial Class Form1
         Me.B3.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.B3.ForeColor = System.Drawing.SystemColors.Window
         Me.B3.Location = New System.Drawing.Point(170, 396)
-        Me.B3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.B3.Margin = New System.Windows.Forms.Padding(2)
         Me.B3.Name = "B3"
         Me.B3.Size = New System.Drawing.Size(75, 81)
         Me.B3.TabIndex = 43
@@ -297,7 +297,7 @@ Partial Class Form1
         Me.B2.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.B2.ForeColor = System.Drawing.SystemColors.Window
         Me.B2.Location = New System.Drawing.Point(89, 396)
-        Me.B2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.B2.Margin = New System.Windows.Forms.Padding(2)
         Me.B2.Name = "B2"
         Me.B2.Size = New System.Drawing.Size(75, 81)
         Me.B2.TabIndex = 42
@@ -320,7 +320,7 @@ Partial Class Form1
         'Button15
         '
         Me.Button15.Location = New System.Drawing.Point(89, 396)
-        Me.Button15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button15.Margin = New System.Windows.Forms.Padding(2)
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(0, 0)
         Me.Button15.TabIndex = 40
@@ -335,7 +335,7 @@ Partial Class Form1
         Me.B1.Font = New System.Drawing.Font("Segoe UI Semibold", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.B1.ForeColor = System.Drawing.SystemColors.Window
         Me.B1.Location = New System.Drawing.Point(8, 396)
-        Me.B1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.B1.Margin = New System.Windows.Forms.Padding(2)
         Me.B1.Name = "B1"
         Me.B1.Size = New System.Drawing.Size(75, 81)
         Me.B1.TabIndex = 39
@@ -345,7 +345,7 @@ Partial Class Form1
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(89, 138)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(0, 0)
         Me.Button2.TabIndex = 38
@@ -393,7 +393,8 @@ Partial Class Form1
         Me.ForeColor = System.Drawing.SystemColors.WindowText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
         Me.Text = "Calculator"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

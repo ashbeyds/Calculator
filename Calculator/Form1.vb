@@ -37,7 +37,7 @@ Handles B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click,
         B6.Click, B7.Click, B8.Click, B9.Click, Point.Click, Plus.Click,
         Minus.Click, Multiply.Click, Divide.Click
 
-        ' Limit input to 14 number
+        ' limit input to 14 number
         If Display.Text.Length >= 14 AndAlso Not isOperatorPressed Then
             MessageBox.Show("Maximum input length reached (Up to 14 number only).", "Input Limit", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
@@ -77,7 +77,7 @@ Handles B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click,
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        AddHandler Display.KeyPress, AddressOf Display_KeyPress
     End Sub
 
     Private Sub Del_Click(sender As Object, e As EventArgs) Handles Del.Click
@@ -95,6 +95,21 @@ Handles B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click,
     End Sub
 
     Private Sub Display_Click(sender As Object, e As EventArgs) Handles Display.Click
+        Display.Focus()
+    End Sub
 
+    Private Sub Display_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Display.KeyPress
+        Dim allowedChars As String = "0123456789.+-x/"
+        e.Handled = True
+
+        If allowedChars.Contains(e.KeyChar) Then
+            Dim btn As New Button()
+            btn.Text = e.KeyChar
+            Number_Click(btn, EventArgs.Empty)
+        ElseIf e.KeyChar = ChrW(Keys.Back) Then
+            Del_Click(Nothing, EventArgs.Empty)
+        ElseIf e.KeyChar = ChrW(Keys.Enter) Then
+            Equals_Click(Nothing, EventArgs.Empty)
+        End If
     End Sub
 End Class
