@@ -45,6 +45,8 @@ Partial Class Form1
         Me.B1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Display1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -362,12 +364,36 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 60
         Me.PictureBox1.TabStop = False
         '
+        'Display1
+        '
+        Me.Display1.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.Display1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Display1.Location = New System.Drawing.Point(300, 23)
+        Me.Display1.Name = "Display1"
+        Me.Display1.Size = New System.Drawing.Size(28, 25)
+        Me.Display1.TabIndex = 61
+        Me.Display1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(8, 49)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.TextBox1.Size = New System.Drawing.Size(320, 71)
+        Me.TextBox1.TabIndex = 62
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Calculator.My.Resources.Resources.Screenshot_2025_09_02_234521
         Me.ClientSize = New System.Drawing.Size(338, 571)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Display1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Clear)
         Me.Controls.Add(Me.Del)
@@ -399,6 +425,7 @@ Partial Class Form1
         Me.Text = "Calculator"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -424,4 +451,6 @@ Partial Class Form1
     Friend WithEvents B1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Display1 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

@@ -2,34 +2,38 @@
     Private firstNum As Double = 0
     Private currentNumber As String = ""
     Private isOperatorPressed As Boolean = False
+    Private wasEqualsPressed As Boolean = False
 
     Private Sub Equals_Click(sender As Object, e As EventArgs) Handles Equals.Click
         Dim secondNum As Double
-        If Double.TryParse(Display.Text, secondNum) Then
+        If Double.TryParse(TextBox1.Text, secondNum) Then
             Select Case currentNumber
                 Case "+"
-                    Display.Text = (firstNum + secondNum).ToString()
+                    TextBox1.Text = (firstNum + secondNum).ToString()
                 Case "-"
-                    Display.Text = (firstNum - secondNum).ToString()
-                Case "x"
-                    Display.Text = (firstNum * secondNum).ToString()
+                    TextBox1.Text = (firstNum - secondNum).ToString()
+                Case "*"
+                    TextBox1.Text = (firstNum * secondNum).ToString()
                 Case "/"
                     If secondNum <> 0 Then
-                        Display.Text = (firstNum / secondNum).ToString()
+                        TextBox1.Text = (firstNum / secondNum).ToString()
                     Else
-                        Display.Text = "Error"
+                        TextBox1.Text = "Error"
                     End If
             End Select
         End If
         currentNumber = ""
         isOperatorPressed = False
+        Display1.Text = ""
+        wasEqualsPressed = True
     End Sub
 
     Private Sub Clear_Click(sender As Object, e As EventArgs) Handles Clear.Click
-        Display.Text = ""
+        TextBox1.Text = ""
         firstNum = 0
         currentNumber = ""
         isOperatorPressed = False
+        Display1.Text = ""
     End Sub
 
     Private Sub Number_Click(sender As Object, e As EventArgs) _
@@ -37,54 +41,100 @@ Handles B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click,
         B6.Click, B7.Click, B8.Click, B9.Click, Point.Click, Plus.Click,
         Minus.Click, Multiply.Click, Divide.Click
 
+        If TextBox1.Text = "Error" OrElse wasEqualsPressed Then
+            TextBox1.Text = ""
+            wasEqualsPressed = False
+        End If
+
         ' limit input to 14 number
-        If Display.Text.Length >= 14 AndAlso Not isOperatorPressed Then
-            MessageBox.Show("Maximum input length reached (Up to 14 number only).", "Input Limit", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If TextBox1.Text.Length >= 10 AndAlso Not isOperatorPressed Then
             Return
         End If
 
         Dim btn As Button = CType(sender, Button)
-        Dim operators As String() = {"+", "-", "x", "/"}
+        Dim operators As String() = {"+", "-", "*", "/"}
 
         If operators.Contains(btn.Text) Then
-            ' bawal same operator i input
-            If String.IsNullOrEmpty(Display.Text) OrElse isOperatorPressed Then
+            If String.IsNullOrEmpty(TextBox1.Text) Then
                 Return
             End If
-            If Double.TryParse(Display.Text, firstNum) Then
+
+            If isOperatorPressed Then
+                currentNumber = btn.Text
+                Display1.Text = btn.Text
+                Return
+            End If
+
+            If Double.TryParse(TextBox1.Text, firstNum) Then
                 currentNumber = btn.Text
                 isOperatorPressed = True
+                Display1.Text = btn.Text
             End If
         ElseIf btn.Text = "." Then
             ' one deci onli
-            If isOperatorPressed OrElse String.IsNullOrEmpty(Display.Text) Then
-                Display.Text = "0."
+            If isOperatorPressed OrElse String.IsNullOrEmpty(TextBox1.Text) Then
+                TextBox1.Text = "0."
                 isOperatorPressed = False
-            ElseIf Not Display.Text.Contains(".") Then
-                Display.Text &= "."
+            ElseIf Not TextBox1.Text.Contains(".") Then
+                TextBox1.Text &= "."
             End If
         Else
             ' bawal zero una (except 0.1 and so on)
-            If Display.Text = "0" AndAlso btn.Text <> "." Then
-                Display.Text = btn.Text
+            If TextBox1.Text = "0" AndAlso btn.Text <> "." Then
+                TextBox1.Text = btn.Text
             ElseIf isOperatorPressed Then
-                Display.Text = btn.Text
+                TextBox1.Text = btn.Text
                 isOperatorPressed = False
             Else
-                Display.Text &= btn.Text
+                TextBox1.Text &= btn.Text
             End If
         End If
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AddHandler Display.KeyPress, AddressOf Display_KeyPress
+        Me.KeyPreview = True
+    End Sub
+
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Equals_Click(Nothing, EventArgs.Empty)
+            e.SuppressKeyPress = True
+        ElseIf e.KeyCode = Keys.Space Then
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+
+    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+        Dim allowedChars As String = "0123456789.+-*/"
+        e.Handled = True
+
+        If (TextBox1.Text = "Error" OrElse wasEqualsPressed) AndAlso allowedChars.Contains(e.KeyChar) Then
+            TextBox1.Text = ""
+            wasEqualsPressed = False
+        End If
+
+        If allowedChars.Contains(e.KeyChar) Then
+            Dim btn As New Button()
+            btn.Text = e.KeyChar
+            Number_Click(btn, EventArgs.Empty)
+        ElseIf e.KeyChar = ChrW(Keys.Back) Then
+            Del_Click(Nothing, EventArgs.Empty)
+        End If
     End Sub
 
     Private Sub Del_Click(sender As Object, e As EventArgs) Handles Del.Click
-        If Display.Text.Length > 0 Then
-            Display.Text = Display.Text.Substring(0, Display.Text.Length - 1)
+        If wasEqualsPressed Then
+            TextBox1.Text = ""
+            wasEqualsPressed = False
+            isOperatorPressed = False
+            currentNumber = ""
+            Return
         End If
-        If Display.Text = "" Then
+
+        If TextBox1.Text.Length > 0 Then
+            TextBox1.Text = TextBox1.Text.Substring(0, TextBox1.Text.Length - 1)
+        End If
+        If TextBox1.Text = "" Then
             isOperatorPressed = False
             currentNumber = ""
         End If
@@ -94,22 +144,44 @@ Handles B0.Click, B1.Click, B2.Click, B3.Click, B4.Click, B5.Click,
 
     End Sub
 
-    Private Sub Display_Click(sender As Object, e As EventArgs) Handles Display.Click
-        Display.Focus()
+    Private Sub TextBox1_Click(sender As Object, e As EventArgs) Handles TextBox1.Click
+        TextBox1.Focus()
     End Sub
 
-    Private Sub Display_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Display.KeyPress
-        Dim allowedChars As String = "0123456789.+-x/"
-        e.Handled = True
-
+    Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MyBase.KeyPress
+        Dim allowedChars As String = "0123456789.+-*/"
         If allowedChars.Contains(e.KeyChar) Then
+
+            If TextBox1.Text = "Error" OrElse wasEqualsPressed Then
+                TextBox1.Text = ""
+                wasEqualsPressed = False
+            End If
             Dim btn As New Button()
             btn.Text = e.KeyChar
             Number_Click(btn, EventArgs.Empty)
+            e.Handled = True
         ElseIf e.KeyChar = ChrW(Keys.Back) Then
             Del_Click(Nothing, EventArgs.Empty)
+            e.Handled = True
         ElseIf e.KeyChar = ChrW(Keys.Enter) Then
             Equals_Click(Nothing, EventArgs.Empty)
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Display1.Click
+
+    End Sub
+
+    Private Sub Display_Click(sender As Object, e As EventArgs) Handles Display.Click
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        TextBox1.Focus()
+        If TextBox1.Text = "Error" OrElse TextBox1.Text = "Error" Then
+            TextBox1.Text = "Error"
+            TextBox1.SelectionStart = 0
         End If
     End Sub
 End Class
